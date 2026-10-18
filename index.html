@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101C35">
+  <meta name="description" content="Portfolio of Md Tasnemul Hossain Chowdhury, a BBA Marketing student at AIUB exploring business, marketing, AI tools, and digital productivity.">
+  <title>Md Tasnemul Hossain Chowdhury — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:#101C35; --gold:#D4AF37; --slate:#64748B;
+      --white:#FFFFFF; --line:#E4E8ED; --soft:#F8F9FB;
+    }
+    *,*::before,*::after { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:94px; }
+    body { margin:0; font-family:"DM Sans",sans-serif; color:var(--navy); background:var(--white); }
+    button,a { -webkit-tap-highlight-color:transparent; }
+    a:focus-visible,button:focus-visible { outline:3px solid var(--gold); outline-offset:4px; }
+    .mono { font-family:"Space Mono",monospace; }
+    .site-bg {
+      position:relative; isolation:isolate; overflow:hidden; width:100%;
+      background-image:linear-gradient(rgba(16,28,53,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(16,28,53,.025) 1px,transparent 1px);
+      background-size:64px 64px;
+    }
+    .site-bg::before { content:""; position:absolute; z-index:-1; pointer-events:none; width:850px; height:850px; top:-400px; right:-290px; background:radial-gradient(circle,rgba(212,175,55,.10),transparent 67%); }
+    .site-bg::after { content:""; position:absolute; z-index:-1; pointer-events:none; width:700px; height:700px; top:1100px; left:-430px; background:radial-gradient(circle,rgba(16,28,53,.035),transparent 68%); }
+    .shell { width:min(100% - 48px,1160px); margin-inline:auto; }
+    .header { background:rgba(255,255,255,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(18px); }
+    .brand-mark { color:var(--navy); border:1px solid var(--gold); background:#FBF8ED; }
+    .nav-link { color:var(--navy); transition:color .2s; text-decoration:none; }
+    .nav-link:hover,.nav-link.active { color:#80640D; }
+    .menu-panel { background:var(--white); border-bottom:1px solid var(--line); }
+    .menu-toggle { color:var(--navy); border:1px solid var(--line); }
+    .hero { min-height:620px; display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:64px; padding-block:112px 110px; }
+    .eyebrow { letter-spacing:.17em; }
+    .hero-heading { font-size:clamp(3rem,6vw,5.75rem); line-height:1.03; letter-spacing:-.065em; }
+    .hero-name { letter-spacing:.045em; }
+    .button { display:inline-flex; justify-content:center; align-items:center; min-height:48px; padding:12px 20px; border-radius:10px; font-weight:700; transition:transform .22s,box-shadow .22s,border-color .22s,background-color .22s; text-decoration:none; }
+    .button:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(16,28,53,.12); }
+    .button-primary { background:var(--gold); color:var(--navy); }
+    .button-primary:hover { background:#E2C461; }
+    .button-outline { background:var(--white); color:var(--navy); border:1px solid #C9CED6; }
+    .button-outline:hover { border-color:var(--gold); }
+    .visual-frame { position:relative; min-height:420px; display:grid; place-items:center; }
+    .visual-frame::before { content:""; position:absolute; width:84%; aspect-ratio:1; border:1px solid rgba(212,175,55,.55); border-radius:50%; box-shadow:0 0 0 38px rgba(212,175,55,.06),0 0 0 76px rgba(16,28,53,.025); }
+    .orb { width:min(75%,330px); aspect-ratio:1; border-radius:50%; background:radial-gradient(circle at 35% 28%,#fffdf6 0%,#EAD99F 22%,#D4AF37 46%,#101C35 85%); box-shadow:0 18px 55px rgba(16,28,53,.13); animation:float 7s ease-in-out infinite; }
+    .profile-photo { position:absolute; z-index:1; top:50%; left:50%; transform:translate(-50%,-50%); display:block; width:min(75%,330px); aspect-ratio:1; height:auto; object-fit:cover; object-position:center 32%; border-radius:50%; border:3px solid var(--gold); box-shadow:0 24px 55px rgba(16,28,53,.19); }
+    .visual-chip { position:absolute; padding:12px 15px; border-radius:10px; border:1px solid rgba(212,175,55,.55); background:rgba(255,255,255,.95); backdrop-filter:blur(12px); font-size:11px; color:var(--navy); box-shadow:0 15px 35px rgba(16,28,53,.12); }
+    .chip-one { top:11%; left:3%; } .chip-two { right:0; bottom:13%; }
+    .visual-cross { position:absolute; top:16%; right:14%; color:#80640D; font-size:22px; }
+    .divider { height:1px; background:linear-gradient(90deg,transparent,rgba(212,175,55,.65),transparent); }
+    .section { padding-block:92px; }
+    .section-kicker { color:#80640D; letter-spacing:.16em; }
+    .section-title { font-size:clamp(2rem,3.8vw,3.2rem); line-height:1.13; letter-spacing:-.045em; }
+    .muted { color:var(--slate); }
+    .glass { background:var(--white); border:1px solid var(--line); border-radius:18px; box-shadow:0 18px 48px rgba(16,28,53,.055); }
+    .lift { transition:transform .25s,border-color .25s,box-shadow .25s; }
+    .lift:hover { transform:translateY(-5px); border-color:var(--gold); box-shadow:0 20px 45px rgba(16,28,53,.11); }
+    .tag { display:inline-block; border:1px solid #E7D8A4; background:#FBF8ED; color:var(--navy); border-radius:999px; padding:7px 11px; font-size:12px; line-height:1.3; }
+    .status-tag { border:1px solid #E7D8A4; background:#FBF8ED; color:var(--navy); }
+    .accent-rule { width:28px; height:2px; background:var(--gold); }
+    .reveal { opacity:0; transform:translateY(17px); transition:opacity .65s ease,transform .65s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+    .number { color:var(--slate); }
+    .contact-value { overflow-wrap:anywhere; }
+    .contact-tile { border:1px solid var(--line); background:var(--soft); }
+    .section-border { border-top:1px solid var(--line); }
+    @keyframes float { 50% { transform:translateY(-13px); } }
+    @media(max-width:850px) {
+      .hero { grid-template-columns:1fr; gap:20px; padding-block:80px 70px; }
+      .visual-frame { min-height:360px; max-width:500px; width:100%; margin:auto; }
+    }
+    @media(max-width:640px) {
+      .shell { width:min(100% - 36px,1160px); }
+      .section { padding-block:70px; }
+      .hero { padding-top:65px; }
+      .visual-frame { min-height:310px; }
+      .chip-one { left:0; } .chip-two { right:0; }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; }
+      .reveal { opacity:1; transform:none; }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+ </head>
+ <body data-template-id="__page-root" class="w-full" style="background: rgb(255, 255, 255);">
+  <div class="site-bg">
+   <header class="header sticky top-0 z-50">
+    <div class="shell flex items-center justify-between gap-4 py-4"><a href="#home" class="flex items-center gap-3 no-underline text-inherit" aria-label="Back to top"> <span aria-hidden="true" class="brand-mark grid h-9 w-9 place-items-center rounded-lg mono text-sm">MT.</span> <span data-template-id="brand-name" class="canva-text hidden sm:block font-bold tracking-tight" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 16px;">Tasnemul / Portfolio</span> </a>
+     <nav aria-label="Primary navigation" class="hidden md:flex items-center gap-7 text-sm font-medium"><a href="#about" data-template-id="nav-about" class="canva-link nav-link" style="color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">About</a> <a href="#education" data-template-id="nav-education" class="canva-link nav-link" style="color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Education</a> <a href="#skills" data-template-id="nav-skills" class="canva-link nav-link" style="color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Skills</a> <a href="#projects" data-template-id="nav-projects" class="canva-link nav-link" style="color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Projects</a> <a href="#contact" data-template-id="nav-contact" class="canva-link nav-link" style="color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Contact</a>
+     </nav><button id="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu" class="menu-toggle md:hidden rounded-lg p-2">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+       <path d="M4 7h16M4 12h16M4 17h16"></path>
+      </svg></button>
+    </div>
+    <nav id="mobile-menu" aria-label="Mobile navigation" class="menu-panel hidden md:hidden">
+     <div class="shell flex flex-col gap-1 py-3"><a href="#about" data-template-id="mobile-about" class="canva-link nav-link rounded-lg px-3 py-2" style="color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">About</a> <a href="#education" data-template-id="mobile-education" class="canva-link nav-link rounded-lg px-3 py-2" style="color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Education</a> <a href="#skills" data-template-id="mobile-skills" class="canva-link nav-link rounded-lg px-3 py-2" style="color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Skills</a> <a href="#projects" data-template-id="mobile-projects" class="canva-link nav-link rounded-lg px-3 py-2" style="color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Projects</a> <a href="#contact" data-template-id="mobile-contact" class="canva-link nav-link rounded-lg px-3 py-2" style="color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Contact</a>
+     </div>
+    </nav>
+   </header>
+   <main id="home">
+    <section class="shell hero" aria-labelledby="hero-title">
+     <div class="reveal">
+      <p data-template-id="hero-eyebrow" class="canva-text mono eyebrow text-xs font-bold mb-7" style="color: rgb(128, 100, 13); font-weight: 700; font-style: normal; font-size: 16px;">BBA MARKETING × DIGITAL TECHNOLOGY</p>
+      <p data-template-id="hero-name" class="canva-text hero-name text-sm font-semibold mb-4" style="color: rgb(0, 0, 0); font-weight: 600; font-style: normal; font-size: 26px;">Md Tasnemul Hossain Chowdhury</p>
+      <h1 id="hero-title" data-template-id="hero-headline" class="canva-text hero-heading font-bold max-w-3xl mb-7" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 32px;">Business Mindset. Technology Driven.</h1>
+      <p data-template-id="hero-description" class="canva-text muted max-w-xl text-lg leading-relaxed mb-8" style="color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-size: 16px;">A marketing student at AIUB exploring the intersection of business, data, AI tools, and digital productivity.</p>
+      <p data-template-id="hero-status" class="canva-tag status-tag inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm mb-8" style="background: rgb(251, 248, 237); color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 16px;">✦ Open to learning, collaboration &amp; meaningful opportunities</p>
+      <div class="flex flex-wrap items-center gap-3"><a href="cv.pdf" download="Md-Tasnemul-Hossain-Chowdhury-CV.pdf" data-template-id="hero-cv" class="canva-button button button-primary" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 16px;">Download CV ↗</a> <a href="mailto:nihal.th2004@gmail.com" data-template-id="hero-email" class="canva-button button button-outline" style="background: rgb(255, 255, 255); color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 16px;">Email Me</a> <a href="https://www.linkedin.com/in/md-tasnemul-hossain-chowdhury-95a2982a0/" target="_blank" rel="noopener noreferrer" data-template-id="hero-linkedin" class="canva-button button button-outline" style="background: rgb(255, 255, 255); color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 16px;">LinkedIn</a>
+      </div>
+     </div>
+     <div class="visual-frame reveal" aria-label="Professional portrait of Md Tasnemul Hossain Chowdhury"><img data-template-id="profile-photo" class="canva-image profile-photo" loading="eager" src="images/profile.png" alt="Professional portrait of Md Tasnemul Hossain Chowdhury wearing a navy suit">
+      <div class="orb" aria-hidden="true"></div><span class="visual-cross mono" aria-hidden="true">+</span>
+     </div>
+    </section>
+    <div class="divider"></div>
+    <section class="shell py-12 md:py-16 reveal" aria-label="Introduction">
+     <div class="grid gap-8 lg:grid-cols-[1.15fr_1fr] lg:items-center">
+      <p data-template-id="intro-copy" class="canva-text font-medium leading-snug max-w-2xl" style="color: rgb(16, 28, 53); font-weight: 500; font-style: normal; font-size: 24px;">Marketing curiosity meets business thinking, digital tools, and clear communication.</p>
+      <div class="grid gap-3 sm:grid-cols-3"><span data-template-id="theme-business" class="canva-tag glass px-4 py-4 text-sm" style="background: rgb(217, 217, 217); color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 16px;">Business &amp; marketing</span> <span data-template-id="theme-digital" class="canva-tag glass px-4 py-4 text-sm" style="background: rgb(217, 217, 217); color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 16px;">Digital productivity</span> <span data-template-id="theme-creative" class="canva-tag glass px-4 py-4 text-sm" style="background: rgb(217, 217, 217); color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 16px;">Communication &amp; creativity</span>
+      </div>
+     </div>
+    </section>
+    <div class="divider"></div>
+    <section id="about" class="shell section scroll-mt-24" aria-labelledby="about-title">
+     <div class="grid gap-10 lg:grid-cols-[.65fr_1fr] reveal">
+      <div>
+       <p data-template-id="about-index" class="canva-text section-kicker mono text-xs mb-4" style="color: rgb(128, 100, 13); font-weight: 400; font-style: normal; font-size: 16px;">01 / THE PERSON</p>
+       <h2 id="about-title" data-template-id="about-title-text" class="canva-text section-title font-bold" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 24px;">About Me</h2>
+      </div>
+      <div class="glass p-7 md:p-9">
+       <div class="accent-rule mb-7"></div>
+       <p data-template-id="about-copy" class="canva-text text-lg leading-relaxed" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 20px;">I’m Md Tasnemul Hossain Chowdhury, a tech-savvy BBA Marketing student at AIUB. I’m interested in how business and marketing connect with MIS, AI tools, and more effective ways of working. I’m continuing to build practical skills in digital productivity, data entry, photography, Canva editing, and public speaking.</p>
+      </div>
+     </div>
+    </section>
+    <section id="education" class="shell section scroll-mt-24 section-border" aria-labelledby="education-title">
+     <div class="reveal">
+      <p data-template-id="education-index" class="canva-text section-kicker mono text-xs mb-4" style="color: rgb(128, 100, 13); font-weight: 400; font-style: normal; font-size: 16px;">02 / FOUNDATION</p>
+      <h2 id="education-title" data-template-id="education-title-text" class="canva-text section-title font-bold mb-9" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 24px;">Education</h2>
+      <article data-template-id="education-card" class="canva-card glass lift p-7 md:p-10 grid gap-8 md:grid-cols-[1fr_.8fr]" style="background: rgb(217, 217, 217);">
+       <div>
+        <p data-template-id="degree-date" class="canva-text mono text-xs mb-5" style="color: rgb(128, 100, 13); font-weight: 400; font-style: normal; font-size: 16px;">STARTED IN 2023</p>
+        <h3 data-template-id="degree-title" class="canva-text font-bold mb-3" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 24px;">BBA in Marketing</h3>
+        <p data-template-id="degree-school" class="canva-text muted leading-relaxed" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">American International University–Bangladesh (AIUB)</p>
+       </div>
+       <div class="md:border-l md:pl-9" style="border-color:#E4E8ED">
+        <p data-template-id="journey-label" class="canva-text font-bold mb-3" style="color: rgb(128, 100, 13); font-weight: 700; font-style: normal; font-size: 16px;">Interdisciplinary journey</p>
+        <p data-template-id="journey-copy" class="canva-text muted leading-relaxed" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">A transition from CSE to BBA that brings perspective across technology, systems, business, and marketing.</p>
+       </div>
+      </article>
+     </div>
+    </section>
+    <section id="skills" class="shell section scroll-mt-24 section-border" aria-labelledby="skills-title">
+     <div class="reveal">
+      <p data-template-id="skills-index" class="canva-text section-kicker mono text-xs mb-4" style="color: rgb(128, 100, 13); font-weight: 400; font-style: normal; font-size: 16px;">03 / TOOLKIT</p>
+      <h2 id="skills-title" data-template-id="skills-title-text" class="canva-text section-title font-bold mb-3" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 24px;">Skills &amp; interests</h2>
+      <p data-template-id="skills-subtitle" class="canva-text muted mb-9" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">The areas I’m studying, practicing, and exploring.</p>
+      <div class="grid gap-5 lg:grid-cols-3">
+       <article data-template-id="skills-business-card" class="canva-card glass lift p-6" style="background: rgb(217, 217, 217);">
+        <div class="h-1 w-10 rounded mb-6" style="background:#D4AF37"></div>
+        <h3 data-template-id="skills-business-title" class="canva-text font-bold mb-5" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 20px;">Business &amp; Marketing</h3>
+        <div class="flex flex-wrap gap-2"><span data-template-id="skill-marketing" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Marketing fundamentals</span> <span data-template-id="skill-consumer" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Consumer behavior</span> <span data-template-id="skill-market" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Market analysis</span> <span data-template-id="skill-thinking" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Business thinking</span> <span data-template-id="skill-mis" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">MIS interest</span>
+        </div>
+       </article>
+       <article data-template-id="skills-digital-card" class="canva-card glass lift p-6" style="background: rgb(217, 217, 217);">
+        <div class="h-1 w-10 rounded mb-6" style="background:#D4AF37"></div>
+        <h3 data-template-id="skills-digital-title" class="canva-text font-bold mb-5" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 20px;">Digital &amp; Technical</h3>
+        <div class="flex flex-wrap gap-2"><span data-template-id="skill-ai" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">AI tools</span> <span data-template-id="skill-productivity" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Digital productivity</span> <span data-template-id="skill-data" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Data entry</span> <span data-template-id="skill-office" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Microsoft Office</span> <span data-template-id="skill-computer" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Computer studies</span> <span data-template-id="skill-canva" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Canva editing</span>
+        </div>
+       </article>
+       <article data-template-id="skills-creative-card" class="canva-card glass lift p-6" style="background: rgb(217, 217, 217);">
+        <div class="h-1 w-10 rounded mb-6" style="background:#D4AF37"></div>
+        <h3 data-template-id="skills-creative-title" class="canva-text font-bold mb-5" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 20px;">Communication &amp; Creative</h3>
+        <div class="flex flex-wrap gap-2"><span data-template-id="skill-speaking" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Public speaking</span> <span data-template-id="skill-presentation" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Presentation</span> <span data-template-id="skill-photography" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Photography</span> <span data-template-id="skill-visual" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Visual storytelling</span> <span data-template-id="skill-writing" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Written communication</span>
+        </div>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section id="projects" class="shell section scroll-mt-24 section-border" aria-labelledby="projects-title">
+     <div class="reveal">
+      <p data-template-id="projects-index" class="canva-text section-kicker mono text-xs mb-4" style="color: rgb(128, 100, 13); font-weight: 400; font-style: normal; font-size: 16px;">04 / EXPLORATIONS</p>
+      <h2 id="projects-title" data-template-id="projects-title-text" class="canva-text section-title font-bold mb-3" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 24px;">Selected projects</h2>
+      <p data-template-id="projects-subtitle" class="canva-text muted mb-9" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">Concepts and academic work shaped by curiosity and research.</p>
+      <div class="grid gap-5 lg:grid-cols-3">
+       <article data-template-id="project-agro-card" class="canva-card glass lift p-7 flex flex-col" style="background: rgb(217, 217, 217);">
+        <p data-template-id="project-agro-type" class="canva-text section-kicker mono text-xs mb-6" style="color: rgb(128, 100, 13); font-weight: 400; font-style: normal; font-size: 16px;">CONCEPT · BANGLADESH</p>
+        <h3 data-template-id="project-agro-title" class="canva-text font-bold mb-4" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 24px;">AgroAI</h3>
+        <p data-template-id="project-agro-copy" class="canva-text muted leading-relaxed mb-7" style="color: rgb(100, 116, 139); font-weight: 700; font-style: normal; font-size: 16px;">A plant-leaf disease detection concept exploring how AI could help identify crop issues and support more accessible agricultural decision-making in Bangladesh.</p>
+        <div class="mt-auto flex flex-wrap gap-2">
+         <span data-template-id="project-agro-tag-one" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">AI concept</span><span data-template-id="project-agro-tag-two" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Agriculture</span>
+        </div>
+       </article>
+       <article data-template-id="project-headspace-card" class="canva-card glass lift p-7 flex flex-col" style="background: rgb(217, 217, 217);">
+        <p data-template-id="project-headspace-type" class="canva-text section-kicker mono text-xs mb-6" style="color: rgb(128, 100, 13); font-weight: 400; font-style: normal; font-size: 16px;">ACADEMIC ANALYSIS</p>
+        <h3 data-template-id="project-headspace-title" class="canva-text font-bold mb-4" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 24px;">Headspace Inc.</h3>
+        <p data-template-id="project-headspace-copy" class="canva-text muted leading-relaxed mb-7" style="color: rgb(100, 116, 139); font-weight: 700; font-style: normal; font-size: 16px;">An academic analysis of consumer behavior and considerations for entering the Bangladesh market.</p>
+        <div class="mt-auto flex flex-wrap gap-2">
+         <span data-template-id="project-headspace-tag-one" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Consumer behavior</span><span data-template-id="project-headspace-tag-two" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Market entry</span>
+        </div>
+       </article>
+       <article data-template-id="project-upskill-card" class="canva-card glass lift p-7 flex flex-col" style="background: rgb(217, 217, 217);">
+        <p data-template-id="project-upskill-type" class="canva-text section-kicker mono text-xs mb-6" style="color: rgb(128, 100, 13); font-weight: 400; font-style: normal; font-size: 16px;">ACADEMIC RESEARCH</p>
+        <h3 data-template-id="project-upskill-title" class="canva-text font-bold mb-4" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 24px;">Upskilling, Reskilling &amp; Employee Performance</h3>
+        <p data-template-id="project-upskill-copy" class="canva-text muted leading-relaxed mb-7" style="color: rgb(100, 116, 139); font-weight: 700; font-style: normal; font-size: 16px;">Research exploring how upskilling and reskilling can relate to employee performance within Bangladesh’s education system.</p>
+        <div class="mt-auto flex flex-wrap gap-2">
+         <span data-template-id="project-upskill-tag-one" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Education</span><span data-template-id="project-upskill-tag-two" class="canva-tag tag" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Workforce learning</span>
+        </div>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section id="courses" class="shell section section-border" aria-labelledby="courses-title">
+     <div class="reveal grid gap-9 lg:grid-cols-[.75fr_1fr]">
+      <div>
+       <p data-template-id="courses-index" class="canva-text section-kicker mono text-xs mb-4" style="color: rgb(128, 100, 13); font-weight: 400; font-style: normal; font-size: 16px;">05 / CONTINUED LEARNING</p>
+       <h2 id="courses-title" data-template-id="courses-title-text" class="canva-text section-title font-bold" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 24px;">
+
+Certifications &amp; courses
+
+</h2>
+      </div>
+      <div class="space-y-3">
+       <article data-template-id="course-cisco-card" class="canva-card glass lift px-6 py-5 flex flex-wrap items-center justify-between gap-2" style="background: rgb(217, 217, 217);">
+        <h3 data-template-id="course-cisco-title" class="canva-text font-semibold" style="color: rgb(16, 28, 53); font-weight: 600; font-style: normal; font-size: 19px;">Introduction to Computer Studies</h3>
+        <p data-template-id="course-cisco-source" class="canva-text text-sm" style="color: rgb(128, 100, 13); font-weight: 700; font-style: normal; font-size: 16px;">Cisco</p>
+       </article>
+       <article data-template-id="course-office-card" class="canva-card glass lift px-6 py-5 flex flex-wrap items-center justify-between gap-2" style="background: rgb(217, 217, 217);">
+        <h3 data-template-id="course-office-title" class="canva-text font-semibold" style="color: rgb(16, 28, 53); font-weight: 600; font-style: normal; font-size: 19px;">Online Microsoft Office Course</h3>
+        <p data-template-id="course-office-source" class="canva-text text-sm" style="color: rgb(128, 100, 13); font-weight: 700; font-style: normal; font-size: 16px;">10 Minute School</p>
+       </article>
+       <article data-template-id="course-management-card" class="canva-card glass lift px-6 py-5 flex flex-wrap items-center justify-between gap-2" style="background: rgb(217, 217, 217);">
+        <h3 data-template-id="course-management-title" class="canva-text font-semibold" style="color: rgb(16, 28, 53); font-weight: 600; font-style: normal; font-size: 19px;">Office Management Technology Course</h3>
+        <p data-template-id="course-management-source" class="canva-text text-sm" style="color: rgb(128, 100, 13); font-weight: 700; font-style: normal; font-size: 16px;">AIUB</p>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section id="highlights" class="shell section section-border" aria-labelledby="highlights-title">
+     <div class="reveal">
+      <p data-template-id="highlights-index" class="canva-text section-kicker mono text-xs mb-4" style="color: rgb(128, 100, 13); font-weight: 400; font-style: normal; font-size: 16px;">06 / BEYOND THE CLASSROOM</p>
+      <h2 id="highlights-title" data-template-id="highlights-title-text" class="canva-text section-title font-bold mb-9" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 24px;">Academic &amp; extracurricular highlights</h2>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+       <div data-template-id="highlight-one-card" class="canva-card glass lift p-6" style="background: rgb(217, 217, 217);">
+        <span class="number mono text-xs" aria-hidden="true">01 /</span>
+        <p data-template-id="highlight-one" class="canva-text mt-5 leading-relaxed" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 16px;">Interdisciplinary learning across CSE, business, marketing, and technology</p>
+       </div>
+       <div data-template-id="highlight-two-card" class="canva-card glass lift p-6" style="background: rgb(217, 217, 217);">
+        <span class="number mono text-xs" aria-hidden="true">02 /</span>
+        <p data-template-id="highlight-two" class="canva-text mt-5 leading-relaxed" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 16px;">Interest in practical AI and digital productivity applications</p>
+       </div>
+       <div data-template-id="highlight-three-card" class="canva-card glass lift p-6" style="background: rgb(217, 217, 217);">
+        <span class="number mono text-xs" aria-hidden="true">03 /</span>
+        <p data-template-id="highlight-three" class="canva-text mt-5 leading-relaxed" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 16px;">Public speaking and presentation development</p>
+       </div>
+       <div data-template-id="highlight-four-card" class="canva-card glass lift p-6" style="background: rgb(217, 217, 217);">
+        <span class="number mono text-xs" aria-hidden="true">04 /</span>
+        <p data-template-id="highlight-four" class="canva-text mt-5 leading-relaxed" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 16px;">Photography and Canva-based visual editing</p>
+       </div>
+       <div data-template-id="highlight-five-card" class="canva-card glass lift p-6" style="background: rgb(217, 217, 217);">
+        <span class="number mono text-xs" aria-hidden="true">05 /</span>
+        <p data-template-id="highlight-five" class="canva-text mt-5 leading-relaxed" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 16px;">Curious, self-directed learning mindset</p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="contact" class="shell section scroll-mt-24 section-border" aria-labelledby="contact-title">
+     <div data-template-id="contact-panel" class="canva-panel glass reveal relative overflow-hidden p-7 md:p-12" style="background: rgb(255, 255, 255);">
+      <div aria-hidden="true" class="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full blur-3xl" style="background:rgba(212,175,55,.1)"></div>
+      <div class="relative grid gap-12 lg:grid-cols-[1fr_.85fr]">
+       <div>
+        <p data-template-id="contact-index" class="canva-text section-kicker mono text-xs mb-4" style="color: rgb(128, 100, 13); font-weight: 400; font-style: normal; font-size: 16px;">07 / GET IN TOUCH</p>
+        <h2 id="contact-title" data-template-id="contact-title-text" class="canva-text section-title font-bold mb-5" style="color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 24px;">Let’s connect</h2>
+        <p data-template-id="contact-copy" class="canva-text muted max-w-lg leading-relaxed mb-7" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">Have an academic, creative, marketing, or technology idea to discuss? I’d welcome a conversation or an opportunity to collaborate.</p>
+        <div class="flex flex-wrap gap-3"><a href="mailto:nihal.th2004@gmail.com" data-template-id="contact-email-button" class="canva-button button button-primary" style="background: rgb(212, 175, 55); color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 16px;">Email Me ↗</a> <a href="https://www.linkedin.com/in/md-tasnemul-hossain-chowdhury-95a2982a0/" target="_blank" rel="noopener noreferrer" data-template-id="contact-linkedin-button" class="canva-button button button-outline" style="background: rgb(255, 255, 255); color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 16px;">LinkedIn ↗</a>
+        </div>
+        <p data-template-id="contact-placeholder-note" class="canva-text muted text-xs mt-5" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">Available for professional conversations, collaboration, and new opportunities.</p>
+       </div>
+       <div class="grid gap-3 sm:grid-cols-2">
+        <div class="contact-tile rounded-xl p-5">
+         <p data-template-id="phone-label" class="canva-text mono text-xs mb-3" style="color: rgb(128, 100, 13); font-weight: 400; font-style: normal; font-size: 16px;">PHONE</p>
+         <a href="tel:+8801304407972" data-template-id="phone-value" class="canva-link contact-value text-sm" style="color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">01304407972</a>
+        </div>
+        <div id="email-placeholder" class="contact-tile rounded-xl p-5 scroll-mt-28">
+         <p data-template-id="email-label" class="canva-text mono text-xs mb-3" style="color: rgb(128, 100, 13); font-weight: 400; font-style: normal; font-size: 16px;">EMAIL</p>
+         <p data-template-id="email-value" class="canva-text contact-value text-sm" style="color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">nihal.th2004@gmail.com</p>
+        </div>
+        <div id="linkedin-placeholder" class="contact-tile rounded-xl p-5 scroll-mt-28">
+         <p data-template-id="linkedin-label" class="canva-text mono text-xs mb-3" style="color: rgb(128, 100, 13); font-weight: 400; font-style: normal; font-size: 16px;">LINKEDIN</p><a href="https://www.linkedin.com/in/md-tasnemul-hossain-chowdhury-95a2982a0/" target="_blank" rel="noopener noreferrer" data-template-id="linkedin-value" class="canva-link contact-value text-sm break-all" style="color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">https://www.linkedin.com/in/md-tasnemul-hossain-chowdhury-95a2982a0/</a>
+        </div>
+        <div class="contact-tile rounded-xl p-5">
+         <p data-template-id="location-label" class="canva-text mono text-xs mb-3" style="color: rgb(128, 100, 13); font-weight: 400; font-style: normal; font-size: 16px;">LOCATION</p>
+         <p data-template-id="location-value" class="canva-text contact-value text-sm" style="color: rgb(16, 28, 53); font-weight: 400; font-style: normal; font-size: 16px;">Bangladesh</p>
+        </div>
+       </div>
+      </div>
+      <div id="cv-download-placeholder" class="relative mt-10 flex flex-wrap items-center justify-between gap-4 section-border pt-7 scroll-mt-28">
+       <div>
+        <p data-template-id="cv-footer-label" class="canva-text font-semibold mb-1" style="color: rgb(16, 28, 53); font-weight: 600; font-style: normal; font-size: 16px;">Looking for the full picture?</p>
+        <p data-template-id="cv-footer-note" class="canva-text muted text-xs" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">Download my CV for a concise overview of my education, skills, and experience.</p>
+       </div><a href="cv.pdf" download="Md-Tasnemul-Hossain-Chowdhury-CV.pdf" data-template-id="footer-cv" class="canva-button button button-outline" style="background: rgb(255, 255, 255); color: rgb(16, 28, 53); font-weight: 700; font-style: normal; font-size: 16px;">Download CV ↗</a>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="section-border">
+    <div class="shell flex flex-wrap items-center justify-between gap-4 py-7">
+     <p data-template-id="footer-copyright" class="canva-text muted text-sm" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">Md Tasnemul Hossain Chowdhury · Portfolio</p><a href="#home" data-template-id="back-top" class="canva-link text-sm hover:underline" style="color: rgb(128, 100, 13); font-weight: 400; font-style: normal; font-size: 16px;">Back to top ↑</a>
+    </div>
+   </footer>
+  </div>
+  <script>
+  const toggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  function closeMenu() {
+    mobileMenu.classList.add('hidden');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open navigation menu');
+  }
+  toggle.addEventListener('click', () => {
+    const open = !mobileMenu.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+  if ('IntersectionObserver' in window) {
+    const navigationLinks = document.querySelectorAll('nav a[href^="#"]');
+    const watchedSections = ['about','education','skills','projects','contact'].map(id => document.getElementById(id));
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navigationLinks.forEach(link => {
+          const active = link.getAttribute('href') === '#' + entry.target.id;
+          link.classList.toggle('active', active);
+          if (active) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      });
+    }, {rootMargin:'-20% 0px -65% 0px'});
+    watchedSections.forEach(section => sectionObserver.observe(section));
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {threshold:.07});
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  }
+</script>
+ 
+</body></html>
